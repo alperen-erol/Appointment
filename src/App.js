@@ -5,7 +5,7 @@ function App() {
   return(
     <main className=" text-center">
       <h2 className=" mt-3 display-2" >Cleveland Clinic</h2>
-      <DoctorList doctor={doctorData}/>
+      <DoctorList doctor={doctorData}/>  
     </main>
   );
 }
