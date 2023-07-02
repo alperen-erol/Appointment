@@ -3,7 +3,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Modals from "./Modals";
-const DoctorList = ({ doctor }) => {
+const DoctorList = ({ doctor, appointments, setAppointments }) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -24,18 +24,26 @@ const DoctorList = ({ doctor }) => {
             sm={4}
             md={3}
             onClick={() => handleDoctorClick(doctor.name)}
+            role="button"
           >
             <img
               className=" img-thumbnail doctor-img "
               src={doctor.img}
               alt={doctor.name}
+              
             />
             <h5>{doctor.name}</h5>
             <h6>{doctor.dep}</h6>
           </Col>
         ))}
       </Row>
-      <Modals show={show} handleClose={handleClose} doctorName={doctorName} />
+      <Modals
+        appointments={appointments}
+        setAppointments={setAppointments}
+        show={show}
+        handleClose={handleClose}
+        doctorName={doctorName}
+      />
     </Container>
   );
 };

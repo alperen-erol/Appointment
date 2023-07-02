@@ -3,10 +3,31 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 
-function Modals({ doctorName, show, handleClose }) {
+function Modals({
+  doctorName,
+  show,
+  handleClose,
+  appointments,
+  setAppointments,
+})
+
+
+{
   const [patientName, setPatientName] = useState("");
   const [date, setDate] = useState("");
-console.log(date)
+  const handleSubmit =(e)=>{
+    e.preventDefault()
+    setAppointments([...appointments,{
+      id:appointments.length + 1,
+      patient: patientName,
+      day:date,
+      consulted:false,
+      doctor:doctorName,
+    }])
+    handleClose()
+    
+  }
+  console.log(appointments)
   return (
     <>
       <Modal show={show} onHide={handleClose}>
@@ -14,7 +35,7 @@ console.log(date)
           <Modal.Title>Appointment for {doctorName}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form>
+          <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Patient Name</Form.Label>
               <Form.Control
@@ -24,9 +45,12 @@ console.log(date)
               />
             </Form.Group>
 
-            <Form.Group  className="mb-3" controlId="formBasicPassword">
-              <Form.Label >Date&Time</Form.Label>
-              <Form.Control onChange={(e) => setDate(e.target.value)} type="datetime-local" />
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Label>Date&Time</Form.Label>
+              <Form.Control
+                onChange={(e) => setDate(e.target.value)}
+                type="datetime-local"
+              />
             </Form.Group>
 
             <div className=" text-center">
