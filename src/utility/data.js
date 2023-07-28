@@ -24,49 +24,49 @@ export const appointmentData = [
 
 export const doctorData = [
   {
-    id: 1,
+    id: 4,
     name: "Dr.Hazel Valery",
     dep: "Cardiology",
     img: "./img/dr1.jpg",
   },
   {
-    id: 2,
+    id: 5,
     name: "Dr. Jasmine Carpanter",
     dep: "Radiolgy",
     img: "./img/dr2.jpg",
   },
   {
-    id: 3,
+    id: 6,
     name: "Dr. Arianna Mary",
     dep: "Orthopedy",
     img: "./img/dr3.jpg",
   },
   {
-    id: 4,
+    id: 7,
     name: "Dr. Jessica White",
     dep: "Gastroentogoly",
     img: "./img/dr4.jpg",
   },
   {
-    id: 5,
+    id: 8,
     name: "Harry Coming",
     dep: "Surgery",
     img: "./img/dr9.jpg",
   },
   {
-    id: 6,
+    id: 9,
     name: "Dr. Kristensen Abraham",
     dep: "Neurology",
     img: "./img/dr6.jpg",
   },
   {
-    id: 7,
+    id: 10,
     name: "Dr.Asley Graham",
     dep: "Pediatry",
     img: "./img/dr7.jpg",
   },
   {
-    id: 8,
+    id: 11,
     name: "Dr. Mary Motley",
     dep: "Oncology",
     img: "./img/dr8.jpg",

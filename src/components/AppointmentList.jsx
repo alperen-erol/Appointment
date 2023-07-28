@@ -6,14 +6,16 @@ import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const AppointmentList = ({ appointments, setAppointments }) => {
-  console.log(appointments);
-  const handleDelete = (id) => {};
+  
+  const handleDelete = (id) => {
+    setAppointments(appointments.filter((item) => item.id !== id))
+  };
   return (
     <>
       {appointments.map((item) => {
-        const { id, patient, consulted, doctor, day } = item;
+        const { id, patient, doctor, day } = item;
         return (
-          <Container className="appointment">
+          <Container key={id} className="appointment">
             <Row>
               <Col>
                 <h3>{patient}</h3>
@@ -28,7 +30,7 @@ const AppointmentList = ({ appointments, setAppointments }) => {
                   icon={faTimesCircle}
                   className="text-danger fs-3"
                   type="button"
-                  onClick={handleDelete(id)}
+                  onClick={()=>handleDelete(id)}
                 />
               </Col>
             </Row>
